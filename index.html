@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seite erstellen</title>
+    <style>
+        body {
+            background-color: #1e2124;
+            color: white;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            background: #2c2f33;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 400px;
+        }
+        .form-container input,
+        .form-container select,
+        .form-container textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .form-container button {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 10px;
+            background-color: #410201;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form action="create_page.php" method="post">
+            <input type="text" name="page_name" placeholder="Dokumentname" required>
+            <input type="text" name="docs_link" placeholder="Google Docs Link" required>
+            <input type="text" name="username" placeholder="Nutzername" required>
+            <input type="password" name="password" placeholder="Passwort" required>
+            <select name="status" required>
+                <option value="Angenommen">Angenommen</option>
+                <option value="Abgelehnt">Abgelehnt</option>
+                <option value="Ab ins KB">Ab ins KB</option>
+            </select>
+            <textarea name="auflagen" placeholder="Auflagen" required></textarea>
+            <button type="submit">Seite erstellen</button>
+        </form>
+    </div>
+</body>
+</html>
